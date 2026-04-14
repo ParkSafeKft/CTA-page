@@ -521,19 +521,6 @@ export default function App() {
         >
           {/* Copy */}
           <div className="hero-copy" style={{ flex: '1', minWidth: isMobile ? '100%' : '300px', maxWidth: '580px' }}>
-            {/* Badge */}
-            <div className="badge-row" style={{
-              display: 'inline-flex', alignItems: 'center', gap: '8px',
-              background: 'rgba(52,170,86,0.08)', border: '1px solid rgba(52,170,86,0.25)',
-              borderRadius: '100px', padding: '6px 14px', marginBottom: '28px',
-              opacity: heroVisible ? 1 : 0, transition: 'opacity 0.6s ease 0.1s',
-            }}>
-              <div style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#34aa56' }} className="dot-active" />
-              <span style={{ fontSize: '0.75rem', color: 'rgba(52,170,86,0.9)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                Launching Sunday
-              </span>
-            </div>
-
             <h1 className="hero-headline" style={{
               opacity: heroVisible ? 1 : 0,
               transform: heroVisible ? 'none' : 'translateY(30px)',
@@ -744,25 +731,15 @@ export default function App() {
           transform: ctaVisible ? 'none' : 'translateY(30px)',
           transition: 'opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1)',
         }}>
-          <div style={{
-            display: 'inline-flex', alignItems: 'center', gap: '8px',
-            background: 'rgba(52,170,86,0.08)', border: '1px solid rgba(52,170,86,0.25)',
-            borderRadius: '100px', padding: '6px 16px', marginBottom: '24px',
-          }}>
-            <div style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#34aa56' }} className="dot-active" />
-            <span style={{ fontSize: '0.75rem', color: 'rgba(52,170,86,0.9)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-              Almost here
-            </span>
-          </div>
           <h2 className="section-headline" style={{
             fontSize: 'clamp(2.4rem, 8vw, 5.5rem)', fontWeight: 400,
             lineHeight: 1.05, letterSpacing: '-0.02em', color: '#f0f4f0', marginBottom: '18px',
           }}>
             Ride smarter.<br />
-            <em style={{ color: '#34aa56', fontStyle: 'italic' }}>Starting Sunday.</em>
+            <em style={{ color: '#34aa56', fontStyle: 'italic' }}>Available now.</em>
           </h2>
           <p style={{ color: 'rgba(232,237,232,0.45)', fontSize: 'clamp(0.9rem, 2vw, 1rem)', lineHeight: 1.7, marginBottom: '40px' }}>
-            Join thousands of cyclists who'll navigate Europe's cities with confidence from day one.
+            Join thousands of cyclists navigating Europe's cities with confidence.
           </p>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
             <StoreButtons size="lg" centered />
