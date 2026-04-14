@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
-import { ParkingSquare, Navigation, Map, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ParkingSquare, Navigation, Map, ChevronLeft, ChevronRight } from 'lucide-react';
 
 /* ─── Keyframes & global styles ─────────────────────────────────────────── */
 const STYLES = `
@@ -280,35 +280,11 @@ function StoreButtons({ size = 'md' }: { size?: 'sm' | 'md' | 'lg' }) {
   const h = size === 'lg' ? '56px' : size === 'sm' ? '40px' : '48px';
   return (
     <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
-      <div className="store-btn" style={{ position: 'relative', display: 'inline-block' }}>
+      <div className="store-btn">
         <img src="/appstore.png" alt="Download on the App Store" style={{ height: h, borderRadius: '10px', display: 'block' }} />
-        <div style={{
-          position: 'absolute', inset: 0,
-          borderRadius: '10px',
-          background: 'linear-gradient(135deg, rgba(52,170,86,0.18) 0%, transparent 60%)',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          gap: '6px',
-        }}>
-          <Clock size={14} color="rgba(255,255,255,0.8)" />
-          <span style={{ fontSize: '11px', color: 'rgba(255,255,255,0.8)', fontFamily: "'DM Sans', sans-serif", fontWeight: 600, letterSpacing: '0.04em' }}>
-            SUNDAY
-          </span>
-        </div>
       </div>
-      <div className="store-btn" style={{ position: 'relative', display: 'inline-block' }}>
+      <div className="store-btn">
         <img src="/googleplay.png" alt="Get it on Google Play" style={{ height: h, borderRadius: '10px', display: 'block' }} />
-        <div style={{
-          position: 'absolute', inset: 0,
-          borderRadius: '10px',
-          background: 'linear-gradient(135deg, rgba(52,170,86,0.18) 0%, transparent 60%)',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          gap: '6px',
-        }}>
-          <Clock size={14} color="rgba(255,255,255,0.8)" />
-          <span style={{ fontSize: '11px', color: 'rgba(255,255,255,0.8)', fontFamily: "'DM Sans', sans-serif", fontWeight: 600, letterSpacing: '0.04em' }}>
-            SUNDAY
-          </span>
-        </div>
       </div>
     </div>
   );
