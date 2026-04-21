@@ -20,7 +20,7 @@ const BASE_DATA = [
   { key: 'xp50',        option: '+50 XP',       style: { backgroundColor: '#fffef9', textColor: '#0a1f12' } },
   { key: 'nothing',     option: 'SAJNOS NEM',   style: { backgroundColor: '#0a1f12', textColor: '#f7f5f0' } },
   { key: 'xp100',       option: '+100 XP',      style: { backgroundColor: '#efece4', textColor: '#0a1f12' } },
-  { key: 'dom',         option: 'DOM 50%',      style: { backgroundColor: '#ec4899', textColor: '#0a1f12' } },
+  { key: 'dom',         option: 'DÓM KUPON',    style: { backgroundColor: '#ec4899', textColor: '#0a1f12' } },
   { key: 'xp50',        option: '+50 XP',       style: { backgroundColor: '#fffef9', textColor: '#0a1f12' } },
   { key: 'nothing',     option: 'SAJNOS NEM',   style: { backgroundColor: '#0a1f12', textColor: '#f7f5f0' } },
   { key: 'xp100',       option: '+100 XP',      style: { backgroundColor: '#efece4', textColor: '#0a1f12' } },
@@ -40,13 +40,13 @@ function resolveData(stock: Stock) {
   });
 }
 
-const resultCopy: Record<string, { title: string; body: string }> = {
-  phoneHolder: { title: 'NYERTÉL EGY TELEFONTARTÓT!', body: 'Vedd át az asztalnál.' },
-  dom:         { title: '50% DOM KUPON!',             body: 'Vedd át az asztalnál.' },
-  xp50:        { title: '+50 XP AZ APPBAN!',          body: 'Szólj a felhasználóneveddel.' },
-  xp100:       { title: '+100 XP AZ APPBAN!',         body: 'Szólj a felhasználóneveddel.' },
-  fallback:    { title: '+300 XP AZ APPBAN!',         body: 'Szólj a felhasználóneveddel.' },
-  nothing:     { title: 'SAJNOS NEM NYERTÉL',         body: 'Legközelebb több szerencsét!' },
+const resultCopy: Record<string, { title: string }> = {
+  phoneHolder: { title: 'NYERTÉL EGY TELEFONTARTÓT!' },
+  dom:         { title: '50% DÓM KUPON!' },
+  xp50:        { title: '+50 XP!' },
+  xp100:       { title: '+100 XP!' },
+  fallback:    { title: '+300 XP!' },
+  nothing:     { title: 'SAJNOS NEM NYERTÉL' },
 };
 
 function clamp(n: number) {
@@ -133,7 +133,7 @@ export default function WheelPage() {
           letterSpacing: '-0.05em',
         }}
       >
-        PÖRGESS ÉS{' '}
+        REGISZTRÁLJ ÉS{' '}
         <span style={{ color: 'var(--green)' }}>NYERJ</span>!
       </h1>
 
@@ -160,7 +160,7 @@ export default function WheelPage() {
             fontFamily="helvetica"
             fontWeight="bold"
             fontSize={14}
-            textDistance={58}
+            textDistance={70}
             spinDuration={0.6}
           />
 
@@ -229,12 +229,9 @@ export default function WheelPage() {
               textAlign: 'center',
             }}
           >
-            <h2 className="hx" style={{ fontSize: 28, margin: '0 0 12px' }}>
+            <h2 className="hx" style={{ fontSize: 28, margin: '0 0 24px' }}>
               {resultCopy[result].title}
             </h2>
-            <p style={{ fontSize: 15, color: 'var(--ink-soft)', marginBottom: 24, lineHeight: 1.4 }}>
-              {resultCopy[result].body}
-            </p>
             <button className="btn big" onClick={closeResult}>
               OK
             </button>
