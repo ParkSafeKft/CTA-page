@@ -1,5 +1,8 @@
 'use client';
 
+import Wheel from './components/Wheel';
+import { BASE_SLICES } from './slices';
+
 export default function WheelPage() {
   return (
     <main
@@ -25,9 +28,7 @@ export default function WheelPage() {
         PÖRGESS ÉS{' '}
         <span style={{ color: 'var(--green)' }}>NYERJ</span>!
       </h1>
-      <div style={{ fontSize: 14, color: 'var(--ink-soft)' }}>
-        [wheel goes here]
-      </div>
+      <Wheel slices={BASE_SLICES} />
     </main>
   );
 }
