@@ -103,6 +103,15 @@ export default function WheelPage() {
     setResult(null);
   }
 
+  function toggleFullscreen() {
+    if (typeof document === 'undefined') return;
+    if (document.fullscreenElement) {
+      document.exitFullscreen().catch(() => {});
+    } else {
+      document.documentElement.requestFullscreen().catch(() => {});
+    }
+  }
+
   return (
     <main
       className="grid-bg"
@@ -149,9 +158,26 @@ export default function WheelPage() {
             radiusLineColor="#0a1f12"
             radiusLineWidth={2.5}
             fontFamily="Archivo Black, sans-serif"
-            fontSize={20}
-            textDistance={62}
+            fontSize={13}
+            textDistance={58}
             spinDuration={0.6}
+            pointerProps={{ style: { display: 'none' } }}
+          />
+
+          <div
+            aria-hidden="true"
+            style={{
+              position: 'absolute',
+              top: -12,
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: 0,
+              height: 0,
+              borderLeft: '22px solid transparent',
+              borderRight: '22px solid transparent',
+              borderTop: '34px solid var(--ink)',
+              zIndex: 4,
+            }}
           />
 
           <button
@@ -186,9 +212,10 @@ export default function WheelPage() {
       </div>
 
       <style>{`
-        .wheel-scale { transform: scale(1.35); transform-origin: center; margin: 60px 0; }
-        @media (max-width: 900px) { .wheel-scale { transform: scale(1.1); margin: 40px 0; } }
-        @media (max-width: 640px) { .wheel-scale { transform: scale(0.85); margin: 16px 0; } }
+        .wheel-scale { transform: scale(1.9); transform-origin: center; margin: 150px 0 170px; }
+        @media (max-width: 1200px) { .wheel-scale { transform: scale(1.55); margin: 110px 0 130px; } }
+        @media (max-width: 900px) { .wheel-scale { transform: scale(1.2); margin: 70px 0 80px; } }
+        @media (max-width: 640px) { .wheel-scale { transform: scale(0.9); margin: 20px 0 30px; } }
       `}</style>
 
       {result && (
@@ -230,6 +257,36 @@ export default function WheelPage() {
           </div>
         </div>
       )}
+
+      <button
+        type="button"
+        onClick={toggleFullscreen}
+        aria-label="Teljes képernyő"
+        style={{
+          position: 'fixed',
+          top: 20,
+          left: 20,
+          width: 44,
+          height: 44,
+          border: '2.5px solid var(--ink)',
+          background: 'var(--paper-2)',
+          boxShadow: '2px 2px 0 0 var(--ink)',
+          cursor: 'pointer',
+          display: 'grid',
+          placeItems: 'center',
+          zIndex: 90,
+        }}
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill="none">
+          <path
+            d="M4 9 V4 H9 M20 9 V4 H15 M4 15 V20 H9 M20 15 V20 H15"
+            stroke="var(--ink)"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
 
       <div
         style={{
