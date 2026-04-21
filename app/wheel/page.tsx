@@ -16,7 +16,7 @@ type Stock = { phoneHolder: number; dom: number };
 const DEFAULT_STOCK: Stock = { phoneHolder: 4, dom: 4 };
 
 const BASE_DATA = [
-  { key: 'phoneHolder', option: 'TARTÓ', style: { backgroundColor: '#34aa56', textColor: '#0a1f12' } },
+  { key: 'phoneHolder', option: 'TELEFONTARTÓ', style: { backgroundColor: '#34aa56', textColor: '#0a1f12' } },
   { key: 'xp50',        option: '+50 XP',       style: { backgroundColor: '#fffef9', textColor: '#0a1f12' } },
   { key: 'nothing',     option: 'SAJNOS NEM',   style: { backgroundColor: '#0a1f12', textColor: '#f7f5f0' } },
   { key: 'xp100',       option: '+100 XP',      style: { backgroundColor: '#efece4', textColor: '#0a1f12' } },
@@ -146,6 +146,7 @@ export default function WheelPage() {
           }}
         >
           <Wheel
+            key={data.map((d) => d.option).join('|')}
             mustStartSpinning={spinning}
             prizeNumber={prizeIndex}
             data={data}
@@ -156,9 +157,10 @@ export default function WheelPage() {
             innerBorderWidth={3}
             radiusLineColor="#0a1f12"
             radiusLineWidth={2.5}
-            fontFamily="Archivo Black, sans-serif"
-            fontSize={11}
-            textDistance={55}
+            fontFamily="helvetica"
+            fontWeight="bold"
+            fontSize={14}
+            textDistance={58}
             spinDuration={0.6}
           />
 
