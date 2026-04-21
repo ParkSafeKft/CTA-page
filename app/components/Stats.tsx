@@ -1,0 +1,83 @@
+export default function Stats() {
+  const stats = [
+    { n: "928K+", l: "POI a térképen" },
+    { n: "658K+", l: "kerékpártároló" },
+    { n: "224K+", l: "ivókút" },
+    { n: "8", l: "magyar nagyváros" },
+    { n: "EU", l: "lefedettség" },
+  ];
+
+  const accent = (i: number) =>
+    i === 1 ? "var(--acid)" : i === 3 ? "var(--orange)" : "var(--paper)";
+
+  return (
+    <section
+      style={{
+        background: "var(--ink)",
+        borderTop: "3px solid var(--ink)",
+        borderBottom: "3px solid var(--ink)",
+        padding: "40px 28px",
+        color: "var(--paper)",
+      }}
+    >
+      <div style={{ maxWidth: 1400, margin: "0 auto" }}>
+        <div
+          className="mono"
+          style={{
+            fontSize: 11,
+            fontWeight: 700,
+            letterSpacing: "0.2em",
+            color: "var(--green-100)",
+            marginBottom: 20,
+          }}
+        >
+          § 02 / NUMBERS — ÉLŐ ADATOK / 2026.04
+        </div>
+        <div
+          className="stats-grid"
+          style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 0 }}
+        >
+          {stats.map((s, i) => (
+            <div
+              key={i}
+              style={{
+                borderLeft: i > 0 ? "2px solid rgba(255,255,255,0.2)" : "none",
+                paddingLeft: i > 0 ? 24 : 0,
+                paddingRight: 12,
+              }}
+            >
+              <div
+                className="hx"
+                style={{
+                  fontSize: "clamp(40px, 5vw, 72px)",
+                  color: accent(i),
+                }}
+              >
+                {s.n}
+              </div>
+              <div
+                className="mono"
+                style={{
+                  fontSize: 11,
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  marginTop: 6,
+                  opacity: 0.75,
+                  letterSpacing: "0.08em",
+                }}
+              >
+                → {s.l}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <style>{`
+        @media (max-width: 900px) {
+          .stats-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 20px !important; }
+          .stats-grid > div { border-left: none !important; padding-left: 0 !important; }
+        }
+      `}</style>
+    </section>
+  );
+}

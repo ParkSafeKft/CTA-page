@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(mkdir -p c:/Users/kopa21/Desktop/DEV/PARKSAFE/CTA-page/.design)",
+      "Bash(unzip -o parksafe.com-handoff.zip -d c:/Users/kopa21/Desktop/DEV/PARKSAFE/CTA-page/.design/)"
+    ]
+  }
+}
