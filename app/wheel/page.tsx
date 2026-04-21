@@ -142,7 +142,6 @@ export default function WheelPage() {
           className="wheel-scale"
           style={{
             position: 'relative',
-            filter: 'drop-shadow(8px 8px 0 var(--ink))',
             lineHeight: 0,
           }}
         >
