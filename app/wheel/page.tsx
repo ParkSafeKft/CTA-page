@@ -128,60 +128,68 @@ export default function WheelPage() {
         <span style={{ color: 'var(--green)' }}>NYERJ</span>!
       </h1>
 
-      <div
-        style={{
-          position: 'relative',
-          width: '100%',
-          maxWidth: 640,
-          filter: 'drop-shadow(8px 8px 0 var(--ink))',
-        }}
-      >
-        <Wheel
-          mustStartSpinning={spinning}
-          prizeNumber={prizeIndex}
-          data={data}
-          onStopSpinning={handleStop}
-          outerBorderColor="#0a1f12"
-          outerBorderWidth={8}
-          innerBorderColor="#0a1f12"
-          innerBorderWidth={3}
-          innerRadius={18}
-          radiusLineColor="#0a1f12"
-          radiusLineWidth={2.5}
-          fontFamily="Archivo Black, sans-serif"
-          fontSize={20}
-          textDistance={62}
-          spinDuration={0.6}
-        />
-
-        <button
-          type="button"
-          onClick={handleSpin}
-          disabled={spinning}
-          aria-label="Pörgess"
+      <div className="wheel-scale-wrap" style={{ width: '100%', display: 'grid', placeItems: 'center' }}>
+        <div
+          className="wheel-scale"
           style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            width: 'clamp(92px, 17%, 120px)',
-            height: 'clamp(92px, 17%, 120px)',
-            borderRadius: '50%',
-            border: '4px solid var(--ink)',
-            background: spinning ? 'var(--paper-2)' : 'var(--green)',
-            color: spinning ? 'var(--ink-soft)' : '#fff',
-            fontFamily: 'var(--font-archivo-black), "Archivo Black", sans-serif',
-            fontSize: 'clamp(14px, 2.2vw, 18px)',
-            letterSpacing: '-0.02em',
-            cursor: spinning ? 'not-allowed' : 'pointer',
-            boxShadow: spinning ? '2px 2px 0 0 var(--ink)' : '5px 5px 0 0 var(--ink)',
-            transition: 'transform 0.12s ease, box-shadow 0.12s ease',
-            zIndex: 5,
+            position: 'relative',
+            filter: 'drop-shadow(8px 8px 0 var(--ink))',
+            lineHeight: 0,
           }}
         >
-          {spinning ? 'PÖRÖG...' : 'PÖRGESS!'}
-        </button>
+          <Wheel
+            mustStartSpinning={spinning}
+            prizeNumber={prizeIndex}
+            data={data}
+            onStopSpinning={handleStop}
+            outerBorderColor="#0a1f12"
+            outerBorderWidth={8}
+            innerBorderColor="#0a1f12"
+            innerBorderWidth={3}
+            radiusLineColor="#0a1f12"
+            radiusLineWidth={2.5}
+            fontFamily="Archivo Black, sans-serif"
+            fontSize={20}
+            textDistance={62}
+            spinDuration={0.6}
+          />
+
+          <button
+            type="button"
+            onClick={handleSpin}
+            disabled={spinning}
+            aria-label="Pörgess"
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: 120,
+              height: 120,
+              borderRadius: '50%',
+              border: '4px solid var(--ink)',
+              background: spinning ? 'var(--paper-2)' : 'var(--green)',
+              color: spinning ? 'var(--ink-soft)' : '#fff',
+              fontFamily: 'var(--font-archivo-black), "Archivo Black", sans-serif',
+              fontSize: 18,
+              letterSpacing: '-0.02em',
+              cursor: spinning ? 'not-allowed' : 'pointer',
+              boxShadow: spinning ? '2px 2px 0 0 var(--ink)' : '5px 5px 0 0 var(--ink)',
+              transition: 'transform 0.12s ease, box-shadow 0.12s ease',
+              zIndex: 5,
+              lineHeight: 1,
+            }}
+          >
+            {spinning ? 'PÖRÖG...' : 'PÖRGESS!'}
+          </button>
+        </div>
       </div>
+
+      <style>{`
+        .wheel-scale { transform: scale(1.35); transform-origin: center; margin: 60px 0; }
+        @media (max-width: 900px) { .wheel-scale { transform: scale(1.1); margin: 40px 0; } }
+        @media (max-width: 640px) { .wheel-scale { transform: scale(0.85); margin: 16px 0; } }
+      `}</style>
 
       {result && (
         <div
