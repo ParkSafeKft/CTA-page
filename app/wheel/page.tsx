@@ -158,8 +158,8 @@ export default function WheelPage() {
             radiusLineColor="#0a1f12"
             radiusLineWidth={2.5}
             fontFamily="Archivo Black, sans-serif"
-            fontSize={13}
-            textDistance={58}
+            fontSize={11}
+            textDistance={55}
             spinDuration={0.6}
           />
 
