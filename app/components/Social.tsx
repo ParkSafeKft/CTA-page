@@ -48,6 +48,7 @@ function AchievementRow({ b, last }: { b: Badge; last: boolean }) {
 
   return (
     <div
+      className="ach-row"
       style={{
         display: "grid",
         gridTemplateColumns: "90px 1fr auto",
@@ -59,6 +60,7 @@ function AchievementRow({ b, last }: { b: Badge; last: boolean }) {
       }}
     >
       <div
+        className="ach-icon"
         style={{
           background: dim ? "#e5e0d4" : t.bg,
           color: dim ? "#6b7280" : t.fg,
@@ -109,6 +111,7 @@ function AchievementRow({ b, last }: { b: Badge; last: boolean }) {
       </div>
 
       <div
+        className="ach-info"
         style={{
           padding: "14px 20px",
           display: "flex",
@@ -206,6 +209,7 @@ function AchievementRow({ b, last }: { b: Badge; last: boolean }) {
       </div>
 
       <div
+        className="ach-meta"
         style={{
           padding: "12px 18px",
           borderLeft: "2.5px solid var(--ink)",
@@ -309,6 +313,7 @@ export default function Social() {
   return (
     <section
       id="social"
+      className="social-section"
       style={{ padding: "100px 28px", maxWidth: 1400, margin: "0 auto" }}
     >
       <div style={{ marginBottom: 56, maxWidth: 820 }}>
@@ -775,6 +780,23 @@ export default function Social() {
 
       <style>{`
         @media (max-width: 900px) { .social-grid { grid-template-columns: 1fr !important; } }
+        @media (max-width: 640px) {
+          .social-section { padding: 64px 16px !important; }
+          .ach-row { grid-template-columns: 70px 1fr !important; }
+          .ach-icon { min-height: 90px; }
+          .ach-info { padding: 12px 14px !important; }
+          .ach-meta {
+            grid-column: 1 / -1 !important;
+            border-left: none !important;
+            border-top: 2.5px solid var(--ink) !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            min-width: 0 !important;
+            padding: 10px 14px !important;
+            gap: 12px !important;
+          }
+        }
       `}</style>
     </section>
   );

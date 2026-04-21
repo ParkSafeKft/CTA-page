@@ -143,3 +143,11 @@ img { display: block; max-width: 100%; }
   border: 2px solid var(--ink);
 }
 
+/* mobile refinements */
+@media (max-width: 640px) {
+  .btn { padding: 12px 18px; font-size: 14px; }
+  .btn.big { padding: 14px 22px; font-size: 14px; }
+  .sec-num { font-size: 10px; padding: 3px 8px; }
+  .sticker { font-size: 12px; padding: 5px 10px; }
+}
+

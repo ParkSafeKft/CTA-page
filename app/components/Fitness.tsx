@@ -68,6 +68,7 @@ export default function Fitness() {
   return (
     <section
       id="fitness"
+      className="fit-section"
       style={{
         padding: "100px 28px",
         background: "var(--ink)",
@@ -146,6 +147,7 @@ export default function Fitness() {
               Heti / havi / éves statisztikák + ismerősök összehasonlítása.
             </p>
             <div
+              className="fit-ministats"
               style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(3, 1fr)",
@@ -161,13 +163,15 @@ export default function Fitness() {
               ].map((s, i) => (
                 <div
                   key={i}
+                  className="fit-ministat"
                   style={{
                     padding: 14,
                     borderRight: i < 2 ? "2.5px solid var(--acid)" : "none",
+                    minWidth: 0,
                   }}
                 >
                   <div
-                    className="hx"
+                    className="hx fit-ministat-n"
                     style={{
                       fontSize: 34,
                       color:
@@ -201,6 +205,7 @@ export default function Fitness() {
 
           {/* Dashboard mock */}
           <div
+            className="fit-dash"
             style={{
               background: "var(--paper)",
               color: "var(--ink)",
@@ -210,23 +215,26 @@ export default function Fitness() {
             }}
           >
             <div
+              className="fit-dash-head"
               style={{
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
+                gap: 12,
+                flexWrap: "wrap",
                 marginBottom: 20,
                 paddingBottom: 14,
                 borderBottom: "2.5px solid var(--ink)",
               }}
             >
-              <div>
+              <div style={{ minWidth: 0 }}>
                 <div
                   className="mono"
                   style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.12em" }}
                 >
                   WEEK.17 / 2026
                 </div>
-                <div className="hx" style={{ fontSize: 24, letterSpacing: "-0.04em" }}>
+                <div className="hx fit-dash-title" style={{ fontSize: 24, letterSpacing: "-0.04em" }}>
                   TELJESÍTMÉNY
                 </div>
               </div>
@@ -376,7 +384,16 @@ export default function Fitness() {
         </div>
       </div>
       <style>{`
-        @media (max-width: 900px) { .fit-grid { grid-template-columns: 1fr !important; } }
+        @media (max-width: 900px) {
+          .fit-grid { grid-template-columns: 1fr !important; gap: 110px !important; }
+        }
+        @media (max-width: 640px) {
+          .fit-section { padding: 64px 18px !important; }
+          .fit-dash { padding: 16px !important; box-shadow: 6px 6px 0 0 var(--acid) !important; }
+          .fit-ministat { padding: 12px 10px !important; }
+          .fit-ministat-n { font-size: 24px !important; }
+          .fit-dash-title { font-size: 18px !important; }
+        }
       `}</style>
     </section>
   );

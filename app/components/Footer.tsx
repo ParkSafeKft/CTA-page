@@ -7,6 +7,7 @@ const COLS: { t: string; l: string[] }[] = [
 export default function Footer() {
   return (
     <footer
+      className="foot-root"
       style={{
         background: "var(--ink)",
         color: "var(--paper)",
@@ -125,7 +126,16 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <style>{`@media (max-width: 900px) { .foot-grid { grid-template-columns: 1fr 1fr !important; } }`}</style>
+      <style>{`
+        @media (max-width: 900px) {
+          .foot-grid { grid-template-columns: 1fr 1fr !important; gap: 28px !important; }
+          .foot-grid > div:first-child { grid-column: 1 / -1 !important; }
+        }
+        @media (max-width: 560px) {
+          .foot-root { padding: 48px 16px 24px !important; }
+          .foot-grid { grid-template-columns: 1fr 1fr !important; gap: 24px !important; }
+        }
+      `}</style>
     </footer>
   );
 }

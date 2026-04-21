@@ -12,6 +12,7 @@ export default function Stats() {
 
   return (
     <section
+      className="stats-section"
       style={{
         background: "var(--ink)",
         borderTop: "3px solid var(--ink)",
@@ -74,8 +75,13 @@ export default function Stats() {
       </div>
       <style>{`
         @media (max-width: 900px) {
-          .stats-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 20px !important; }
-          .stats-grid > div { border-left: none !important; padding-left: 0 !important; }
+          .stats-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 20px 16px !important; }
+          .stats-grid > div { border-left: none !important; padding-left: 0 !important; padding-right: 0 !important; }
+        }
+        @media (max-width: 560px) {
+          .stats-section { padding: 32px 16px !important; }
+          .stats-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 18px 14px !important; }
+          .stats-grid > div:last-child { grid-column: span 2 !important; }
         }
       `}</style>
     </section>

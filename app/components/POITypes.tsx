@@ -70,6 +70,7 @@ const TYPES: POI[] = [
 export default function POITypes() {
   return (
     <section
+      className="poi-section"
       style={{ padding: "100px 28px", maxWidth: 1400, margin: "0 auto" }}
     >
       <div style={{ marginBottom: 56, maxWidth: 820 }}>
@@ -200,11 +201,17 @@ export default function POITypes() {
 
       <style>{`
         @media (max-width: 900px) {
+          .poi-section { padding: 64px 20px !important; }
           .poi-grid { grid-template-columns: 1fr 1fr !important; }
           .poi-cell { border-right: none !important; border-bottom: 3px solid var(--ink) !important; }
+          .poi-cell:nth-last-child(-n+2) { border-bottom: none !important; }
+          .poi-cell:nth-child(odd) { border-right: 3px solid var(--ink) !important; }
         }
         @media (max-width: 600px) {
+          .poi-section { padding: 56px 16px !important; }
           .poi-grid { grid-template-columns: 1fr !important; }
+          .poi-cell { padding: 22px !important; min-height: auto !important; border-right: none !important; border-bottom: 3px solid var(--ink) !important; }
+          .poi-cell:last-child { border-bottom: none !important; }
         }
       `}</style>
     </section>

@@ -20,6 +20,7 @@ export default function Nav() {
       }}
     >
       <div
+        className="nav-inner"
         style={{
           maxWidth: 1400,
           margin: "0 auto",
@@ -30,14 +31,14 @@ export default function Nav() {
           gap: 24,
         }}
       >
-        <a href="#" style={{ display: "flex", alignItems: "center", gap: 12 }}>
+        <a href="#" className="nav-logo" style={{ display: "flex", alignItems: "center", gap: 12 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/assets/logo.png"
             alt="ParkSafe"
             style={{ width: 40, height: 40, border: "3px solid var(--ink)" }}
           />
-          <span className="hx" style={{ fontSize: 24, letterSpacing: "-0.04em" }}>
+          <span className="hx nav-logo-text" style={{ fontSize: 24, letterSpacing: "-0.04em" }}>
             PARKSAFE<span style={{ color: "var(--green)" }}>/</span>
           </span>
         </a>
@@ -61,7 +62,7 @@ export default function Nav() {
               {label}
             </a>
           ))}
-          <button className="btn" style={{ padding: "10px 16px", fontSize: 12 }}>
+          <button className="btn nav-cta" style={{ padding: "10px 16px", fontSize: 12 }}>
             <Ic.Download s={14} /> Letöltés
           </button>
         </div>
@@ -69,6 +70,12 @@ export default function Nav() {
       <style>{`
         @media (max-width: 900px) {
           .nav-links .nav-link { display: none; }
+        }
+        @media (max-width: 640px) {
+          .nav-inner { padding: 10px 14px !important; gap: 10px !important; }
+          .nav-logo img { width: 34px !important; height: 34px !important; }
+          .nav-logo-text { font-size: 18px !important; }
+          .nav-cta { padding: 8px 12px !important; font-size: 11px !important; }
         }
       `}</style>
     </nav>

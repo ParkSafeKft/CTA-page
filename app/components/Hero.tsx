@@ -3,7 +3,7 @@ import { Ic } from "./Icons";
 export default function Hero() {
   return (
     <section
-      className="grid-bg"
+      className="grid-bg hero-section"
       style={{
         position: "relative",
         padding: "56px 28px 80px",
@@ -47,9 +47,9 @@ export default function Hero() {
           </div>
 
           <h1
-            className="hx"
+            className="hx hero-headline"
             style={{
-              fontSize: "clamp(64px, 9vw, 140px)",
+              fontSize: "clamp(44px, 10vw, 140px)",
               marginBottom: 28,
               letterSpacing: "-0.055em",
             }}
@@ -91,6 +91,7 @@ export default function Hero() {
           </p>
 
           <div
+            className="hero-buttons"
             style={{
               display: "flex",
               gap: 14,
@@ -176,8 +177,9 @@ export default function Hero() {
         </div>
 
         {/* Right: hero mockup */}
-        <div style={{ position: "relative", minHeight: 640 }}>
+        <div className="hero-right" style={{ position: "relative", minHeight: 640 }}>
           <div
+            className="hero-right-bg"
             style={{
               position: "absolute",
               top: 40,
@@ -229,6 +231,7 @@ export default function Hero() {
 
           {/* sticker: tároló */}
           <div
+            className="hero-sticker-1"
             style={{
               position: "absolute",
               top: 20,
@@ -272,6 +275,7 @@ export default function Hero() {
 
           {/* sticker: szerviz */}
           <div
+            className="hero-sticker-2"
             style={{
               position: "absolute",
               top: 200,
@@ -315,6 +319,7 @@ export default function Hero() {
 
           {/* sticker: ivókút */}
           <div
+            className="hero-sticker-3"
             style={{
               position: "absolute",
               bottom: 60,
@@ -360,7 +365,17 @@ export default function Hero() {
 
       <style>{`
         @media (max-width: 900px) {
-          .hero-grid { grid-template-columns: 1fr !important; }
+          .hero-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+          .hero-right { min-height: 520px !important; }
+        }
+        @media (max-width: 640px) {
+          .hero-section { padding: 36px 16px 56px !important; }
+          .hero-right { min-height: 440px !important; }
+          .hero-right-bg { height: 400px !important; top: 30px !important; }
+          .hero-buttons .btn.big { padding: 14px 18px !important; font-size: 14px !important; }
+          .hero-sticker-1 { top: 10px !important; left: 0 !important; transform: rotate(-3deg) scale(0.82) !important; transform-origin: top left !important; }
+          .hero-sticker-2 { top: 160px !important; right: 0 !important; transform: rotate(4deg) scale(0.82) !important; transform-origin: top right !important; }
+          .hero-sticker-3 { bottom: 20px !important; right: 0 !important; transform: rotate(-2deg) scale(0.82) !important; transform-origin: bottom right !important; }
         }
       `}</style>
     </section>

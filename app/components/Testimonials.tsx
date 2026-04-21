@@ -24,7 +24,7 @@ const QUOTES = [
 
 export default function Testimonials() {
   return (
-    <section style={{ padding: "90px 28px", maxWidth: 1400, margin: "0 auto" }}>
+    <section className="quote-section" style={{ padding: "90px 28px", maxWidth: 1400, margin: "0 auto" }}>
       <div style={{ marginBottom: 48 }}>
         <span className="sec-num">§ 08 / VOICES</span>
         <h2
@@ -127,6 +127,10 @@ export default function Testimonials() {
           .quote-grid { grid-template-columns: 1fr !important; }
           .quote-cell { border-right: none !important; border-bottom: 3px solid var(--ink) !important; }
           .quote-cell:last-child { border-bottom: none !important; }
+        }
+        @media (max-width: 640px) {
+          .quote-section { padding: 56px 16px !important; }
+          .quote-cell { padding: 22px !important; }
         }
       `}</style>
     </section>

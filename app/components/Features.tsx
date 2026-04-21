@@ -45,6 +45,7 @@ export default function Features() {
   return (
     <section
       id="features"
+      className="feat-section"
       style={{ padding: "100px 28px", maxWidth: 1400, margin: "0 auto" }}
     >
       <div
@@ -146,8 +147,15 @@ export default function Features() {
         })}
       </div>
       <style>{`
-        @media (max-width: 900px) { .feat-grid { grid-template-columns: 1fr 1fr !important; } }
-        @media (max-width: 600px) { .feat-grid { grid-template-columns: 1fr !important; } }
+        @media (max-width: 900px) {
+          .feat-section { padding: 64px 20px !important; }
+          .feat-grid { grid-template-columns: 1fr 1fr !important; }
+        }
+        @media (max-width: 600px) {
+          .feat-section { padding: 56px 16px !important; }
+          .feat-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+          .feat-grid .card { min-height: auto !important; padding: 22px !important; }
+        }
       `}</style>
     </section>
   );

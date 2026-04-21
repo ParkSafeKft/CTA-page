@@ -30,6 +30,7 @@ export default function MapShowcase() {
   return (
     <section
       id="map"
+      className="map-section"
       style={{
         background: "var(--paper-2)",
         borderTop: "3px solid var(--ink)",
@@ -60,6 +61,7 @@ export default function MapShowcase() {
             </h2>
           </div>
           <div
+            className="map-tabs"
             style={{
               display: "flex",
               gap: 0,
@@ -74,6 +76,7 @@ export default function MapShowcase() {
                 <button
                   key={i}
                   onClick={() => setTab(i)}
+                  className="map-tab-btn"
                   style={{
                     padding: "14px 22px",
                     fontFamily: "var(--font-archivo-black), 'Archivo Black', sans-serif",
@@ -176,6 +179,7 @@ export default function MapShowcase() {
           </div>
 
           <div
+            className="map-info"
             style={{
               padding: 40,
               display: "flex",
@@ -195,7 +199,7 @@ export default function MapShowcase() {
               MODE [{String(tab + 1).padStart(2, "0")}] — {active.code}
             </div>
             <div
-              className="hx"
+              className="hx map-info-title"
               style={{
                 fontSize: 48,
                 marginBottom: 18,
@@ -253,7 +257,14 @@ export default function MapShowcase() {
       <style>{`
         @media (max-width: 900px) {
           .map-grid { grid-template-columns: 1fr !important; }
-          .map-img-wrap { border-right: none !important; border-bottom: 3px solid var(--ink) !important; }
+          .map-img-wrap { border-right: none !important; border-bottom: 3px solid var(--ink) !important; aspect-ratio: 4 / 5 !important; }
+          .map-tabs { width: 100%; overflow-x: auto; }
+          .map-tab-btn { min-width: auto !important; flex: 1 1 0 !important; padding: 12px 10px !important; font-size: 12px !important; }
+        }
+        @media (max-width: 640px) {
+          .map-section { padding: 64px 16px !important; }
+          .map-info { padding: 28px 20px !important; }
+          .map-info-title { font-size: 34px !important; }
         }
       `}</style>
     </section>
