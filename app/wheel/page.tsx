@@ -161,23 +161,6 @@ export default function WheelPage() {
             fontSize={13}
             textDistance={58}
             spinDuration={0.6}
-            pointerProps={{ style: { display: 'none' } }}
-          />
-
-          <div
-            aria-hidden="true"
-            style={{
-              position: 'absolute',
-              top: -12,
-              left: '50%',
-              transform: 'translateX(-50%)',
-              width: 0,
-              height: 0,
-              borderLeft: '22px solid transparent',
-              borderRight: '22px solid transparent',
-              borderTop: '34px solid var(--ink)',
-              zIndex: 4,
-            }}
           />
 
           <button
