@@ -18,11 +18,11 @@ const DEFAULT_STOCK: Stock = { phoneHolder: 4, dom: 4 };
 const BASE_DATA = [
   { key: 'phoneHolder', option: 'TELEFONTARTÓ', style: { backgroundColor: '#34aa56', textColor: '#0a1f12' } },
   { key: 'xp50',        option: '+50 XP',       style: { backgroundColor: '#fffef9', textColor: '#0a1f12' } },
-  { key: 'nothing',     option: 'SAJNOS NEM',   style: { backgroundColor: '#0a1f12', textColor: '#f7f5f0' } },
+  { key: 'xp150',       option: '+150 XP',      style: { backgroundColor: '#EF4444', textColor: '#fffef9' } },
   { key: 'xp100',       option: '+100 XP',      style: { backgroundColor: '#efece4', textColor: '#0a1f12' } },
   { key: 'dom',         option: 'DÓM KUPON',    style: { backgroundColor: '#ec4899', textColor: '#0a1f12' } },
   { key: 'xp50',        option: '+50 XP',       style: { backgroundColor: '#fffef9', textColor: '#0a1f12' } },
-  { key: 'nothing',     option: 'SAJNOS NEM',   style: { backgroundColor: '#0a1f12', textColor: '#f7f5f0' } },
+  { key: 'xp150',       option: '+150 XP',      style: { backgroundColor: '#EF4444', textColor: '#fffef9' } },
   { key: 'xp100',       option: '+100 XP',      style: { backgroundColor: '#efece4', textColor: '#0a1f12' } },
 ];
 
@@ -45,8 +45,8 @@ const resultCopy: Record<string, { title: string }> = {
   dom:         { title: '50% DÓM KUPON!' },
   xp50:        { title: '+50 XP!' },
   xp100:       { title: '+100 XP!' },
+  xp150:       { title: '+150 XP!' },
   fallback:    { title: '+300 XP!' },
-  nothing:     { title: 'SAJNOS NEM NYERTÉL' },
 };
 
 function clamp(n: number) {
