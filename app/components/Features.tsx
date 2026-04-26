@@ -4,38 +4,38 @@ type Feat = { t: string; d: string; ic: IconKey; n: string };
 
 const FEATURES: Feat[] = [
   {
-    t: "Közösségi POI-k",
-    d: "Te jelölsz pontokat, fényképeket töltesz fel, értékelsz. A térkép a közösségtől van, a közösségnek.",
+    t: "Community POIs",
+    d: "You mark points, upload photos, leave ratings. The map is by the community, for the community.",
     ic: "Users",
     n: "01",
   },
   {
-    t: "Offline mentés",
-    d: "Letöltöd a városod, GPS adat nélkül is megy. Túra közben nincs signal-szorongás.",
+    t: "Offline saving",
+    d: "Download your city, works without data. No signal anxiety on tour.",
     ic: "Map",
     n: "02",
   },
   {
-    t: "Kedvencek + jegyzetek",
-    d: "Gyors hozzáférés, saját jegyzetek minden ponthoz (\"kulcs a büfénél\").",
+    t: "Favorites + notes",
+    d: "Quick access, your own notes on every point (\"key at the snack bar\").",
     ic: "Heart",
     n: "03",
   },
   {
-    t: "Közösségi jelentések",
-    d: "Defektes ivókút? Bezárt szerviz? A közösség jelzi, mindenki lát mindent.",
+    t: "Community reports",
+    d: "Broken fountain? Closed shop? The community reports it, everyone sees it.",
     ic: "Flag",
     n: "04",
   },
   {
-    t: "Túra rögzítés",
-    d: "Automatikus GPS tracking — táv, idő, sebesség, szintemelkedés, kalória.",
+    t: "Ride tracking",
+    d: "Automatic GPS tracking — distance, time, speed, elevation, calories.",
     ic: "Route",
     n: "05",
   },
   {
     t: "GPX export",
-    d: "Minden utad exportálható és megosztható.",
+    d: "Every ride is exportable and shareable.",
     ic: "Download",
     n: "06",
   },
@@ -64,9 +64,9 @@ export default function Features() {
             className="hx"
             style={{ fontSize: "clamp(48px, 7vw, 100px)", letterSpacing: "-0.05em" }}
           >
-            AMIT EGY
+            WHAT EVERY
             <br />
-            BRINGÁS <span style={{ color: "var(--green)" }}>VÁR</span>.
+            CYCLIST <span style={{ color: "var(--green)" }}>NEEDS</span>.
           </h2>
         </div>
         <div
@@ -80,7 +80,7 @@ export default function Features() {
             background: "var(--green-100)",
           }}
         >
-          06 MODUL — TELJES LISTA →
+          06 MODULES — FULL LIST →
         </div>
       </div>
 

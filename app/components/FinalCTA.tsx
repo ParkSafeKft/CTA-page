@@ -56,7 +56,7 @@ export default function FinalCTA() {
             letterSpacing: "0.03em",
           }}
         >
-          100% INGYENES
+          100% FREE
         </div>
 
         <div style={{ position: "relative", zIndex: 2 }}>
@@ -79,7 +79,7 @@ export default function FinalCTA() {
               letterSpacing: "-0.06em",
             }}
           >
-            ÜLJ
+            HOP IN
             <br />
             <span
               className="cta-pill"
@@ -90,11 +90,10 @@ export default function FinalCTA() {
                 padding: "0 20px",
               }}
             >
-              NYEREGBE
+              THE SADDLE.
             </span>
-            .
             <br />
-            MI VEZETÜNK.
+            WE&apos;LL GUIDE.
           </h2>
           <p
             style={{
@@ -107,8 +106,8 @@ export default function FinalCTA() {
               paddingLeft: 18,
             }}
           >
-            <strong>928K+</strong> POI / <strong>8</strong> magyar nagyváros /{" "}
-            <strong>EU</strong> lefedettség.
+            <strong>928K+</strong> POI / <strong>150+</strong> major cities /{" "}
+            <strong>EU</strong> coverage.
           </p>
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
             <button className="btn ink big" style={{ fontSize: 16 }}>

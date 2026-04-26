@@ -1,10 +1,10 @@
 export default function Stats() {
   const stats = [
-    { n: "928K+", l: "POI a térképen" },
-    { n: "658K+", l: "kerékpártároló" },
-    { n: "224K+", l: "ivókút" },
-    { n: "8", l: "magyar nagyváros" },
-    { n: "EU", l: "lefedettség" },
+    { n: "928K+", l: "POIs on the map" },
+    { n: "658K+", l: "bike racks" },
+    { n: "224K+", l: "drinking fountains" },
+    { n: "150+", l: "major cities" },
+    { n: "EU", l: "coverage" },
   ];
 
   const accent = (i: number) =>
@@ -32,7 +32,7 @@ export default function Stats() {
             marginBottom: 20,
           }}
         >
-          § 02 / NUMBERS — ÉLŐ ADATOK / 2026.04
+          § 02 / NUMBERS — LIVE DATA / 2026.04
         </div>
         <div
           className="stats-grid"

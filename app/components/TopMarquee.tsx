@@ -1,15 +1,15 @@
 import { Fragment } from "react";
 
 const ITEMS = [
-  "BICIKLITÁROLÓK",
-  "SZERVIZEK",
-  "BICIKLIBOLTOK",
-  "IVÓKUTAK",
-  "REPAIR STATIONÖK",
-  "ÚTVONALAK",
-  "CHALLENGE-EK",
-  "ISMERŐSÖK",
-  "TELJESÍTMÉNY",
+  "BIKE RACKS",
+  "REPAIR SHOPS",
+  "BIKE STORES",
+  "DRINKING FOUNTAINS",
+  "REPAIR STATIONS",
+  "ROUTES",
+  "CHALLENGES",
+  "FRIENDS",
+  "PERFORMANCE",
 ];
 
 export default function TopMarquee() {

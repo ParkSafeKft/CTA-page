@@ -10,14 +10,14 @@ const BARS = [
   { v: 78, big: false },
 ] as const;
 
-const DAYS = ["H", "K", "Sz", "Cs", "P", "Sz", "V"];
+const DAYS = ["M", "T", "W", "T", "F", "S", "S"];
 
 type Row = { l: string; v: string; i: IconKey };
 const ROWS: Row[] = [
-  { l: "Távolság", v: "142.8 km", i: "Route" },
-  { l: "Idő nyeregben", v: "6ó 24p", i: "Clock" },
-  { l: "Átlagsebesség", v: "22.3 km/h", i: "Zap" },
-  { l: "Szintkülönbség", v: "384 m ↑", i: "Activity" },
+  { l: "Distance", v: "142.8 km", i: "Route" },
+  { l: "Time in saddle", v: "6h 24m", i: "Clock" },
+  { l: "Avg. speed", v: "22.3 km/h", i: "Zap" },
+  { l: "Elevation", v: "384 m ↑", i: "Activity" },
 ];
 
 const SHARDS: React.CSSProperties[] = [
@@ -102,7 +102,7 @@ export default function Fitness() {
             marginBottom: 28,
           }}
         >
-          § 06 / PERFORMANCE LOG — ÖSSZES ADATOD, EGYBEN
+          § 06 / PERFORMANCE LOG — ALL YOUR DATA, IN ONE PLACE
         </div>
 
         <div
@@ -123,13 +123,13 @@ export default function Fitness() {
                 letterSpacing: "-0.05em",
               }}
             >
-              NEM CSAK
+              DON&apos;T JUST
               <br />
-              ELÉRSZ.
+              ARRIVE.
               <br />
-              <span style={{ color: "var(--green-100)" }}>FEJLŐDSZ</span>
+              <span style={{ color: "var(--green-100)" }}>IMPROVE</span>
               <br />
-              IS.
+              TOO.
             </h2>
             <p
               style={{
@@ -143,8 +143,8 @@ export default function Fitness() {
                 paddingLeft: 16,
               }}
             >
-              Minden utad automatikusan rögzül — távolság, idő, sebesség, szintkülönbség, kalória.
-              Heti / havi / éves statisztikák + ismerősök összehasonlítása.
+              Every ride is tracked automatically — distance, time, speed, elevation, calories.
+              Weekly / monthly / yearly stats + compare with friends.
             </p>
             <div
               className="fit-ministats"
@@ -157,9 +157,9 @@ export default function Fitness() {
               }}
             >
               {[
-                { l: "Rögzített túra", v: "221" },
-                { l: "Megtett táv", v: "1,189" },
-                { l: "Szintemelkedés", v: "33.8K" },
+                { l: "Tracked rides", v: "221" },
+                { l: "Distance covered", v: "1,189" },
+                { l: "Elevation gain", v: "33.8K" },
               ].map((s, i) => (
                 <div
                   key={i}
@@ -235,7 +235,7 @@ export default function Fitness() {
                   WEEK.17 / 2026
                 </div>
                 <div className="hx fit-dash-title" style={{ fontSize: 24, letterSpacing: "-0.04em" }}>
-                  TELJESÍTMÉNY
+                  PERFORMANCE
                 </div>
               </div>
               <div

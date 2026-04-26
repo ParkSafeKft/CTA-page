@@ -27,9 +27,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ParkSafe — A biciklisek városi térképe",
+  title: "ParkSafe — The urban map for cyclists",
   description:
-    "Tárolók, szervizek, boltok, ivókutak, javítóállomások — egy térképen. Útvonaltervező, teljesítmény-tracking, közösségi challenge-ek. Egy app a biciklis mindennapokhoz.",
+    "Bike racks, repair shops, stores, drinking fountains, repair stations — on one map. Route planner, performance tracking, community challenges. One app for everyday cycling.",
   icons: { icon: "/favicon.ico" },
 };
 
@@ -38,7 +38,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
-      lang="hu"
+      lang="en"
       className={`${archivo.variable} ${archivoBlack.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <body>{children}</body>

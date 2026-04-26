@@ -1,7 +1,7 @@
 const COLS: { t: string; l: string[] }[] = [
-  { t: "TERMÉK", l: ["Térkép", "Teljesítmény", "Challenge-ek", "Sync-ek"] },
-  { t: "KÖZÖSSÉG", l: ["Blog", "Ranglisták", "POI-t jelölni", "Discord"] },
-  { t: "CÉG", l: ["Rólunk", "Sajtó", "Adatvédelem", "ÁSZF"] },
+  { t: "PRODUCT", l: ["Map", "Performance", "Challenges", "Syncs"] },
+  { t: "COMMUNITY", l: ["Blog", "Leaderboards", "Mark POI", "Discord"] },
+  { t: "COMPANY", l: ["About", "Press", "Privacy", "Terms"] },
 ];
 
 export default function Footer() {
@@ -56,9 +56,9 @@ export default function Footer() {
                 fontWeight: 500,
               }}
             >
-              A városi bringás operációs rendszere.
+              The operating system for urban cyclists.
               <br />
-              Magyar termék — magyar közösség — magyar városok.
+              Built by cyclists — for cyclists — across Europe.
             </p>
           </div>
           {COLS.map((c) => (
@@ -111,7 +111,7 @@ export default function Footer() {
               letterSpacing: "0.1em",
             }}
           >
-            © 2026 PARKSAFE — MADE IN HU
+            © 2026 PARKSAFE — MADE IN EU
           </div>
           <div
             className="mono"

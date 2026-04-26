@@ -1,20 +1,20 @@
 const QUOTES = [
   {
-    q: "Végre egy bringás app, ami tényleg magyar városokra van szabva. A szegedi ivókutak mind benne vannak — életmentő nyáron.",
+    q: "Finally a cycling app actually built for my city. All the local drinking fountains are in it — a lifesaver in summer.",
     a: "Kata B.",
     r: "SZEGED",
     c: "var(--green-100)",
     num: "01",
   },
   {
-    q: "Reggelente az első dolgom: megnézem hol szabad a tároló a munkahely mellett. Soha többé nem láncolom ki a kapuhoz.",
+    q: "First thing in the morning: I check which racks are free near the office. Never chaining my bike to a gate again.",
     a: "Bence T.",
     r: "BUDAPEST",
     c: "var(--green)",
     num: "02",
   },
   {
-    q: "Gyalog dolgozom, de a párom ezt használja és letöltöttem csak kíváncsiságból. Végül én is elkezdtem bringázni.",
+    q: "I walk to work, but my partner uses it so I downloaded it out of curiosity. Ended up cycling myself.",
     a: "Eszter L.",
     r: "DEBRECEN",
     c: "var(--cream)",
@@ -31,7 +31,7 @@ export default function Testimonials() {
           className="hx"
           style={{ fontSize: "clamp(40px, 5.5vw, 80px)", letterSpacing: "-0.05em" }}
         >
-          A <span style={{ color: "var(--green)" }}>KÖZÖSSÉG</span> MONDJA.
+          THE <span style={{ color: "var(--green)" }}>COMMUNITY</span> SPEAKS.
         </h2>
       </div>
       <div

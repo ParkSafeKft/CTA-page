@@ -4,22 +4,22 @@ import { useState } from "react";
 
 const TABS = [
   {
-    n: "Felfedezés",
+    n: "Explore",
     code: "EXPLORE",
     img: "/assets/map_city.png",
-    desc: "Szűrd típusra: csak tárolók, csak szervizek, vagy minden együtt. Clustered markerek, real-time nyitvatartás.",
+    desc: "Filter by type: only racks, only repair shops, or all together. Clustered markers, real-time opening hours.",
   },
   {
-    n: "Részletek",
+    n: "Details",
     code: "DETAIL",
     img: "/assets/map_detail.png",
-    desc: "Minden ponthoz: fényképek, értékelések, felszereltség (fedett / kamerás / 24/7), közösségi bejelentések.",
+    desc: "For every point: photos, ratings, features (covered / monitored / 24/7), community reports.",
   },
   {
-    n: "Útvonal",
+    n: "Route",
     code: "ROUTE",
     img: "/assets/screen_nav.png",
-    desc: "Biciklis-barát navigáció — bike lane-ek, kevésbé forgalmas útvonalak, elkerülhető dombok.",
+    desc: "Bike-friendly navigation — bike lanes, less-trafficked routes, hills you can avoid.",
   },
 ];
 
@@ -55,9 +55,9 @@ export default function MapShowcase() {
               className="hx"
               style={{ fontSize: "clamp(44px, 6vw, 88px)", letterSpacing: "-0.05em" }}
             >
-              MINDEN PONT.
+              EVERY POINT.
               <br />
-              EGY <span style={{ color: "var(--green)" }}>TÉRKÉP</span>.
+              ONE <span style={{ color: "var(--green)" }}>MAP</span>.
             </h2>
           </div>
           <div
@@ -226,9 +226,9 @@ export default function MapShowcase() {
               }}
             >
               {[
-                "Közösségi pontosítások & fényképek",
-                "Minden pont szerkeszthető — te is hozzáadhatsz",
-                "Mentett helyek szinkronizálódnak eszközök között",
+                "Community fixes & photos",
+                "Every point is editable — you can add too",
+                "Saved places sync across devices",
               ].map((t, i) => (
                 <div
                   key={i}

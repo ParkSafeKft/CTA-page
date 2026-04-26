@@ -12,8 +12,8 @@ type POI = {
 
 const TYPES: POI[] = [
   {
-    n: "Kerékpártárolók",
-    d: "Fedett, kamerás, 24/7. Szűrd arra amit szeretsz.",
+    n: "Bike racks",
+    d: "Covered, monitored, 24/7. Filter for what you want.",
     c: "var(--green)",
     fg: "var(--ink)",
     ic: "Bike",
@@ -21,8 +21,8 @@ const TYPES: POI[] = [
     code: "PRK",
   },
   {
-    n: "Ivókutak",
-    d: "Hogy sose szomjazz útközben. Részletes városi lefedettség.",
+    n: "Drinking fountains",
+    d: "So you never go thirsty on the road. Detailed city coverage.",
     c: "var(--blue)",
     fg: "var(--paper)",
     ic: "Droplet",
@@ -30,8 +30,8 @@ const TYPES: POI[] = [
     code: "WTR",
   },
   {
-    n: "Szervizek + boltok",
-    d: "Defektjavítás, fékbeállítás, alkatrészek, új bringák.",
+    n: "Repair shops + stores",
+    d: "Flat tire fixes, brake adjustments, parts, new bikes.",
     c: "var(--green-100)",
     fg: "var(--ink)",
     ic: "Wrench",
@@ -39,8 +39,8 @@ const TYPES: POI[] = [
     code: "SRV",
   },
   {
-    n: "Javítóállomások",
-    d: "Önkiszolgáló szerelőpont, pumpa, szerszám — ingyen.",
+    n: "Repair stations",
+    d: "Self-service workstations, pumps, tools — free.",
     c: "var(--pink)",
     fg: "var(--ink)",
     ic: "Zap",
@@ -48,8 +48,8 @@ const TYPES: POI[] = [
     code: "RPR",
   },
   {
-    n: "EU lefedettség",
-    d: "Majdnem minden EU-s országban — nem csak itthon működik.",
+    n: "EU coverage",
+    d: "In nearly every EU country — not just locally.",
     c: "var(--cream)",
     fg: "var(--ink)",
     ic: "Map",
@@ -57,8 +57,8 @@ const TYPES: POI[] = [
     code: "GEO",
   },
   {
-    n: "Plusz folyamatosan",
-    d: "Biciklis-barát kávézók, pihenőhelyek — közösség bővíti.",
+    n: "Plus growing",
+    d: "Bike-friendly cafés, rest stops — added by the community.",
     c: "var(--ink)",
     fg: "var(--green-100)",
     ic: "Sparkle",
@@ -83,9 +83,9 @@ export default function POITypes() {
             letterSpacing: "-0.05em",
           }}
         >
-          NEM CSAK
+          NOT JUST
           <br />
-          <span style={{ color: "var(--green)" }}>EGY</span> DOLOG.
+          <span style={{ color: "var(--green)" }}>ONE</span> THING.
         </h2>
         <p
           style={{
@@ -97,8 +97,8 @@ export default function POITypes() {
             paddingLeft: 16,
           }}
         >
-          A ParkSafe <strong>komplett</strong> biciklis térkép — nem csak tárolók.
-          Minden, ami városi bringázáshoz kell, <strong>egy</strong> app-ban.
+          ParkSafe is a <strong>complete</strong> cycling map — not just racks.
+          Everything you need for urban cycling, in <strong>one</strong> app.
         </p>
       </div>
 

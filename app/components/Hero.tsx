@@ -42,7 +42,7 @@ export default function Hero() {
                 letterSpacing: "0.06em",
               }}
             >
-              ● 928K+ POI / 8 VÁROS / EU
+              ● 928K+ POI / 150+ CITIES / EU
             </span>
           </div>
 
@@ -54,7 +54,7 @@ export default function Hero() {
               letterSpacing: "-0.055em",
             }}
           >
-            A VÁROS
+            URBAN
             <br />
             <span
               style={{
@@ -65,10 +65,10 @@ export default function Hero() {
                 marginLeft: -2,
               }}
             >
-              BRINGÁSAI
+              CYCLISTS
             </span>
             <br />
-            <span style={{ color: "var(--green)" }}>NEM</span> TÉVEDNEK EL.
+            <span style={{ color: "var(--green)" }}>NEVER</span> GET LOST.
           </h1>
 
           <p
@@ -83,10 +83,10 @@ export default function Hero() {
               paddingLeft: 18,
             }}
           >
-            Tárolók, szervizek, boltok, ivókutak, javítóállomások — egy térképen.
-            Útvonaltervező, teljesítmény-tracking, közösségi challenge-ek.
+            Racks, repair shops, stores, drinking fountains, repair stations — on one map.
+            Route planner, performance tracking, community challenges.
             <strong style={{ color: "var(--ink)", display: "block", marginTop: 8 }}>
-              → Egy app a biciklis mindennapokhoz.
+              → One app for everyday cycling.
             </strong>
           </p>
 
@@ -106,7 +106,7 @@ export default function Hero() {
               <Ic.Play s={16} /> Google Play
             </button>
             <button className="btn ghost big">
-              <Ic.Map s={18} /> TÉRKÉP →
+              <Ic.Map s={18} /> MAP →
             </button>
           </div>
 
@@ -170,7 +170,7 @@ export default function Hero() {
                   textTransform: "uppercase",
                 }}
               >
-                Magyar közösség. EU-s térkép.
+                Cycling community. EU-wide map.
               </div>
             </div>
           </div>
@@ -205,7 +205,7 @@ export default function Hero() {
               transform: "rotate(180deg)",
             }}
           >
-            FIG.01 — APP PREVIEW / HU
+            FIG.01 — APP PREVIEW / EU
           </div>
 
           <div
@@ -220,7 +220,7 @@ export default function Hero() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/assets/hero_mockup.png"
-              alt="ParkSafe alkalmazás képernyőfotó"
+              alt="ParkSafe app screenshot"
               style={{
                 width: "95%",
                 maxWidth: 460,
@@ -229,7 +229,7 @@ export default function Hero() {
             />
           </div>
 
-          {/* sticker: tároló */}
+          {/* sticker: rack */}
           <div
             className="hero-sticker-1"
             style={{
@@ -265,7 +265,7 @@ export default function Hero() {
                 className="mono"
                 style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.1em" }}
               >
-                → TÁROLÓ
+                → RACK
               </div>
               <div className="hx" style={{ fontSize: 15 }}>
                 120 M
@@ -273,7 +273,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* sticker: szerviz */}
+          {/* sticker: repair */}
           <div
             className="hero-sticker-2"
             style={{
@@ -309,15 +309,15 @@ export default function Hero() {
                 className="mono"
                 style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.1em" }}
               >
-                → SZERVIZ
+                → REPAIR
               </div>
               <div className="hx" style={{ fontSize: 15 }}>
-                NYITVA
+                OPEN
               </div>
             </div>
           </div>
 
-          {/* sticker: ivókút */}
+          {/* sticker: fountain */}
           <div
             className="hero-sticker-3"
             style={{
@@ -353,10 +353,10 @@ export default function Hero() {
                 className="mono"
                 style={{ fontSize: 9, fontWeight: 700, letterSpacing: "0.1em" }}
               >
-                → IVÓKÚT
+                → FOUNTAIN
               </div>
               <div className="hx" style={{ fontSize: 15 }}>
-                DEÁK TÉR
+                MAIN SQ.
               </div>
             </div>
           </div>

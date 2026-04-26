@@ -16,13 +16,13 @@ type Stock = { phoneHolder: number; dom: number };
 const DEFAULT_STOCK: Stock = { phoneHolder: 4, dom: 4 };
 
 const BASE_DATA = [
-  { key: 'phoneHolder', option: 'TELEFONTARTÓ', style: { backgroundColor: '#34aa56', textColor: '#0a1f12' } },
+  { key: 'phoneHolder', option: 'PHONE HOLDER', style: { backgroundColor: '#34aa56', textColor: '#0a1f12' } },
   { key: 'xp50',        option: '+50 XP',       style: { backgroundColor: '#fffef9', textColor: '#0a1f12' } },
-  { key: 'nothing',     option: 'SAJNOS NEM',   style: { backgroundColor: '#0a1f12', textColor: '#f7f5f0' } },
+  { key: 'nothing',     option: 'NO LUCK',      style: { backgroundColor: '#0a1f12', textColor: '#f7f5f0' } },
   { key: 'xp100',       option: '+100 XP',      style: { backgroundColor: '#efece4', textColor: '#0a1f12' } },
-  { key: 'dom',         option: 'DÓM KUPON',    style: { backgroundColor: '#ec4899', textColor: '#0a1f12' } },
+  { key: 'dom',         option: 'DOM COUPON',   style: { backgroundColor: '#ec4899', textColor: '#0a1f12' } },
   { key: 'xp50',        option: '+50 XP',       style: { backgroundColor: '#fffef9', textColor: '#0a1f12' } },
-  { key: 'nothing',     option: 'SAJNOS NEM',   style: { backgroundColor: '#0a1f12', textColor: '#f7f5f0' } },
+  { key: 'nothing',     option: 'NO LUCK',      style: { backgroundColor: '#0a1f12', textColor: '#f7f5f0' } },
   { key: 'xp100',       option: '+100 XP',      style: { backgroundColor: '#efece4', textColor: '#0a1f12' } },
 ];
 
@@ -41,12 +41,12 @@ function resolveData(stock: Stock) {
 }
 
 const resultCopy: Record<string, { title: string }> = {
-  phoneHolder: { title: 'NYERTÉL EGY TELEFONTARTÓT!' },
-  dom:         { title: '50% DÓM KUPON!' },
+  phoneHolder: { title: 'YOU WON A PHONE HOLDER!' },
+  dom:         { title: '50% DOM COUPON!' },
   xp50:        { title: '+50 XP!' },
   xp100:       { title: '+100 XP!' },
   fallback:    { title: '+300 XP!' },
-  nothing:     { title: 'SAJNOS NEM NYERTÉL' },
+  nothing:     { title: 'BETTER LUCK NEXT TIME' },
 };
 
 function clamp(n: number) {
@@ -133,8 +133,8 @@ export default function WheelPage() {
           letterSpacing: '-0.05em',
         }}
       >
-        REGISZTRÁLJ ÉS{' '}
-        <span style={{ color: 'var(--green)' }}>NYERJ</span>!
+        REGISTER AND{' '}
+        <span style={{ color: 'var(--green)' }}>WIN</span>!
       </h1>
 
       <div className="wheel-scale-wrap" style={{ width: '100%', display: 'grid', placeItems: 'center' }}>
@@ -168,7 +168,7 @@ export default function WheelPage() {
             type="button"
             onClick={handleSpin}
             disabled={spinning}
-            aria-label="Pörgess"
+            aria-label="Spin"
             style={{
               position: 'absolute',
               top: '50%',
@@ -190,7 +190,7 @@ export default function WheelPage() {
               lineHeight: 1,
             }}
           >
-            {spinning ? 'PÖRÖG...' : 'PÖRGESS!'}
+            {spinning ? 'SPINNING...' : 'SPIN!'}
           </button>
         </div>
       </div>
@@ -242,7 +242,7 @@ export default function WheelPage() {
       <button
         type="button"
         onClick={toggleFullscreen}
-        aria-label="Teljes képernyő"
+        aria-label="Fullscreen"
         style={{
           position: 'fixed',
           top: 20,
@@ -300,7 +300,7 @@ export default function WheelPage() {
             </div>
 
             <StockRow
-              label="Telefontartó"
+              label="Phone holder"
               value={stock.phoneHolder}
               onChange={(n) => setStock((s) => ({ ...s, phoneHolder: clamp(n) }))}
             />
@@ -336,7 +336,7 @@ export default function WheelPage() {
 
         <button
           type="button"
-          aria-label={adminOpen ? 'Panel bezárása' : 'Admin panel'}
+          aria-label={adminOpen ? 'Close panel' : 'Admin panel'}
           onClick={() => setAdminOpen((v) => !v)}
           style={{
             width: 44,
