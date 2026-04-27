@@ -60,6 +60,7 @@ export default function WheelPage() {
   const [prizeIndex, setPrizeIndex] = useState(0);
   const [result, setResult] = useState<string | null>(null);
   const [adminOpen, setAdminOpen] = useState(false);
+  const [forcedNext, setForcedNext] = useState<'phoneHolder' | 'dom' | null>(null);
 
   useEffect(() => {
     try {
@@ -85,13 +86,21 @@ export default function WheelPage() {
   function handleSpin() {
     if (spinning) return;
     setResult(null);
-    setPrizeIndex(Math.floor(Math.random() * data.length));
+    let idx: number;
+    if (forcedNext) {
+      const found = BASE_DATA.findIndex((d) => d.key === forcedNext);
+      idx = found >= 0 ? found : Math.floor(Math.random() * data.length);
+    } else {
+      idx = Math.floor(Math.random() * data.length);
+    }
+    setPrizeIndex(idx);
     setSpinning(true);
   }
 
   function handleStop() {
     setSpinning(false);
     setResult(data[prizeIndex].key);
+    setForcedNext(null);
   }
 
   function closeResult() {
@@ -311,6 +320,37 @@ export default function WheelPage() {
               onChange={(n) => setStock((s) => ({ ...s, dom: clamp(n) }))}
             />
 
+            <div
+              className="mono"
+              style={{
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: '0.12em',
+                color: 'var(--ink-soft)',
+                margin: '18px 0 8px',
+              }}
+            >
+              § KÖVI FIX NYEREMÉNY
+            </div>
+            <div style={{ display: 'flex', gap: 8 }}>
+              <ForceButton
+                active={forcedNext === 'phoneHolder'}
+                disabled={stock.phoneHolder <= 0}
+                onClick={() =>
+                  setForcedNext((v) => (v === 'phoneHolder' ? null : 'phoneHolder'))
+                }
+              >
+                TARTÓ
+              </ForceButton>
+              <ForceButton
+                active={forcedNext === 'dom'}
+                disabled={stock.dom <= 0}
+                onClick={() => setForcedNext((v) => (v === 'dom' ? null : 'dom'))}
+              >
+                DÓM
+              </ForceButton>
+            </div>
+
             <button
               type="button"
               onClick={() => setStock(DEFAULT_STOCK)}
@@ -428,6 +468,42 @@ function StepButton({
         color: disabled ? 'var(--ink-soft)' : 'var(--ink)',
         fontFamily: 'var(--font-archivo-black), "Archivo Black", sans-serif',
         fontSize: 18,
+        cursor: disabled ? 'not-allowed' : 'pointer',
+        boxShadow: disabled ? 'none' : '2px 2px 0 0 var(--ink)',
+      }}
+    >
+      {children}
+    </button>
+  );
+}
+
+function ForceButton({
+  children,
+  onClick,
+  active,
+  disabled,
+}: {
+  children: React.ReactNode;
+  onClick: () => void;
+  active?: boolean;
+  disabled?: boolean;
+}) {
+  const bg = disabled ? 'var(--paper-2)' : active ? 'var(--green)' : '#fff';
+  const color = disabled ? 'var(--ink-soft)' : active ? '#fff' : 'var(--ink)';
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={disabled}
+      style={{
+        flex: 1,
+        height: 38,
+        border: '2.5px solid var(--ink)',
+        background: bg,
+        color,
+        fontFamily: 'var(--font-archivo-black), "Archivo Black", sans-serif',
+        fontSize: 13,
+        letterSpacing: '-0.01em',
         cursor: disabled ? 'not-allowed' : 'pointer',
         boxShadow: disabled ? 'none' : '2px 2px 0 0 var(--ink)',
       }}
