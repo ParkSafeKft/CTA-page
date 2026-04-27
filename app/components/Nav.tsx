@@ -2,10 +2,10 @@ import { Ic } from "./Icons";
 
 export default function Nav() {
   const links: [string, string][] = [
-    ["Térkép", "#map"],
-    ["Funkciók", "#features"],
-    ["Teljesítmény", "#fitness"],
-    ["Közösség", "#social"],
+    ["Map", "#map"],
+    ["Features", "#features"],
+    ["Performance", "#fitness"],
+    ["Community", "#social"],
     ["Blog", "#"],
   ];
 
@@ -63,7 +63,7 @@ export default function Nav() {
             </a>
           ))}
           <button className="btn nav-cta" style={{ padding: "10px 16px", fontSize: 12 }}>
-            <Ic.Download s={14} /> Letöltés
+            <Ic.Download s={14} /> Download
           </button>
         </div>
       </div>

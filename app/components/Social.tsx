@@ -17,14 +17,14 @@ type Badge = {
 };
 
 const BADGES: Badge[] = [
-  { n: "Night Rider",     ic: "Moon",     d: "10+ túra 22:00 és hajnal 4:00 között",    cat: "IDŐ",           rarity: "EPIC",      progress: 100, xp: 500,  date: "2026.03.14", earned: true,  tone: "green"  },
-  { n: "Community Hero",  ic: "People",   d: "20 érvényes probléma bejelentése",         cat: "KÖZÖSSÉG",      rarity: "RARE",      progress: 85,  xp: 400,  date: null,         earned: false, tone: "blue"   },
-  { n: "Speedster",       ic: "Flash",    d: "Érj el 30 km/h-t egy túra során",          cat: "TELJESÍTMÉNY", rarity: "EPIC",      progress: 100, xp: 500,  date: "2026.01.22", earned: true,  tone: "green"  },
-  { n: "On a Roll",       ic: "Flame",    d: "7 napos aktivitási sorozat",                cat: "STREAK",        rarity: "RARE",      progress: 100, xp: 300,  date: "2026.02.08", earned: true,  tone: "orange" },
-  { n: "Globe Trotter",   ic: "Earth",    d: "Teljesíts kihívást 3 különböző városban",  cat: "FELFEDEZÉS",   rarity: "LEGENDARY", progress: 66,  xp: 1000, date: null,         earned: false, tone: "green"  },
-  { n: "Weekend Warrior", ic: "Calendar", d: "10 túra hétvégéken",                        cat: "TELJESÍTMÉNY", rarity: "COMMON",    progress: 100, xp: 200,  date: "2025.11.30", earned: true,  tone: "ink"    },
-  { n: "Map Scout",       ic: "Compass",  d: "20 különböző helyszín megtekintése",       cat: "FELFEDEZÉS",   rarity: "COMMON",    progress: 100, xp: 150,  date: "2025.09.12", earned: true,  tone: "blue"   },
-  { n: "City Racer",      ic: "Podium",   d: "Top 3 helyezés egy napi kihívásban",       cat: "VERSENY",       rarity: "LEGENDARY", progress: 33,  xp: 1000, date: null,         earned: false, tone: "green"  },
+  { n: "Night Rider",     ic: "Moon",     d: "10+ rides between 10:00 PM and 4:00 AM",    cat: "TIME",          rarity: "EPIC",      progress: 100, xp: 500,  date: "2026.03.14", earned: true,  tone: "green"  },
+  { n: "Community Hero",  ic: "People",   d: "Report 20 valid issues",                    cat: "COMMUNITY",     rarity: "RARE",      progress: 85,  xp: 400,  date: null,         earned: false, tone: "blue"   },
+  { n: "Speedster",       ic: "Flash",    d: "Reach 30 km/h during a ride",               cat: "PERFORMANCE",   rarity: "EPIC",      progress: 100, xp: 500,  date: "2026.01.22", earned: true,  tone: "green"  },
+  { n: "On a Roll",       ic: "Flame",    d: "7-day activity streak",                     cat: "STREAK",        rarity: "RARE",      progress: 100, xp: 300,  date: "2026.02.08", earned: true,  tone: "orange" },
+  { n: "Globe Trotter",   ic: "Earth",    d: "Complete a challenge in 3 different cities", cat: "EXPLORATION",  rarity: "LEGENDARY", progress: 66,  xp: 1000, date: null,         earned: false, tone: "green"  },
+  { n: "Weekend Warrior", ic: "Calendar", d: "10 weekend rides",                          cat: "PERFORMANCE",   rarity: "COMMON",    progress: 100, xp: 200,  date: "2025.11.30", earned: true,  tone: "ink"    },
+  { n: "Map Scout",       ic: "Compass",  d: "Visit 20 different locations",              cat: "EXPLORATION",   rarity: "COMMON",    progress: 100, xp: 150,  date: "2025.09.12", earned: true,  tone: "blue"   },
+  { n: "City Racer",      ic: "Podium",   d: "Top 3 in a daily challenge",                cat: "RACE",          rarity: "LEGENDARY", progress: 33,  xp: 1000, date: null,         earned: false, tone: "green"  },
 ];
 
 const TONES: Record<Tone, { bg: string; fg: string; accent: string }> = {
@@ -233,7 +233,7 @@ function AchievementRow({ b, last }: { b: Badge; last: boolean }) {
                 marginBottom: 2,
               }}
             >
-              ✓ TELJESÍTVE
+              ✓ COMPLETED
             </div>
             <div className="mono" style={{ fontSize: 11, fontWeight: 700, marginBottom: 4 }}>
               {b.date}
@@ -265,7 +265,7 @@ function AchievementRow({ b, last }: { b: Badge; last: boolean }) {
                 marginBottom: 2,
               }}
             >
-              FOLYAMATBAN
+              IN PROGRESS
             </div>
             <div
               className="mono"
@@ -326,9 +326,9 @@ export default function Social() {
             letterSpacing: "-0.05em",
           }}
         >
-          TEKERJ <span style={{ color: "var(--green)" }}>EGYÜTT</span>.
+          RIDE <span style={{ color: "var(--green)" }}>TOGETHER</span>.
           <br />
-          FEJLŐDJETEK EGYÜTT.
+          GROW TOGETHER.
         </h2>
         <p
           style={{
@@ -340,7 +340,7 @@ export default function Social() {
             paddingLeft: 16,
           }}
         >
-          17 kitűző. Időalapú, teljesítményalapú, közösségi és streak kihívások — gyűjtsd be mind.
+          17 badges. Time-based, performance-based, community, and streak challenges — collect them all.
         </p>
       </div>
 
@@ -378,10 +378,10 @@ export default function Social() {
                   marginBottom: 4,
                 }}
               >
-                → ACHIEVEMENTS / PROFIL
+                → ACHIEVEMENTS / PROFILE
               </div>
               <div className="hx" style={{ fontSize: 22, letterSpacing: "-0.03em" }}>
-                KITŰZŐK & KIHÍVÁSOK
+                BADGES & CHALLENGES
               </div>
             </div>
             <div style={{ display: "flex", gap: 0, border: "2.5px solid var(--green-100)" }}>
@@ -401,7 +401,7 @@ export default function Social() {
                     opacity: 0.7,
                   }}
                 >
-                  TELJESÍTVE
+                  COMPLETED
                 </div>
                 <div className="hx" style={{ fontSize: 18, letterSpacing: "-0.03em" }}>
                   {earnedCount} / 17
@@ -418,7 +418,7 @@ export default function Social() {
                     opacity: 0.7,
                   }}
                 >
-                  ÖSSZ. XP
+                  TOTAL XP
                 </div>
                 <div
                   className="hx"
@@ -476,18 +476,18 @@ export default function Social() {
                     textTransform: "uppercase",
                   }}
                 >
-                  És még {remaining} kitűző vár
+                  And {remaining} more badges await
                 </div>
                 <div
                   className="mono"
                   style={{ fontSize: 11, fontWeight: 600, color: "var(--ink-soft)" }}
                 >
-                  Minden úttal közelebb a következőhöz.
+                  Every ride brings you closer.
                 </div>
               </div>
             </div>
             <button className="btn" style={{ padding: "10px 16px", fontSize: 12 }}>
-              <Ic.Arrow s={14} /> ÖSSZES MEGNYITÁSA
+              <Ic.Arrow s={14} /> OPEN ALL
             </button>
           </div>
         </div>
@@ -512,7 +512,7 @@ export default function Social() {
               }}
             >
               <div className="hx" style={{ fontSize: 18, letterSpacing: "-0.03em" }}>
-                KÖZÖSSÉG / LIVE
+                COMMUNITY / LIVE
               </div>
               <span
                 className="mono"
@@ -522,10 +522,10 @@ export default function Social() {
               </span>
             </div>
             {[
-              { l: "Regisztrált bringás", v: "315" },
-              { l: "Rögzített túra", v: "221" },
-              { l: "Megtett táv", v: "1,189 km" },
-              { l: "Szintemelkedés", v: "33,880 m" },
+              { l: "Registered cyclists", v: "315" },
+              { l: "Tracked rides", v: "221" },
+              { l: "Distance covered", v: "1,189 km" },
+              { l: "Elevation gain", v: "33,880 m" },
             ].map((s, i) => (
               <div
                 key={i}
@@ -620,7 +620,7 @@ export default function Social() {
                   marginBottom: 6,
                 }}
               >
-                CO₂ MEGTAKARÍTÁS
+                CO₂ SAVED
               </div>
               <div
                 style={{
@@ -657,8 +657,8 @@ export default function Social() {
                   lineHeight: 1.35,
                 }}
               >
-                autó helyett bringa ·{" "}
-                <strong style={{ color: "var(--green-100)" }}>= 1,189 km</strong> kibocsátás-mentes
+                bike instead of car ·{" "}
+                <strong style={{ color: "var(--green-100)" }}>= 1,189 km</strong> emission-free
               </div>
             </div>
 
@@ -687,7 +687,7 @@ export default function Social() {
                       opacity: 0.7,
                     }}
                   >
-                    ELÉGETT KCAL
+                    KCAL BURNED
                   </span>
                 </div>
                 <div
@@ -727,7 +727,7 @@ export default function Social() {
                       opacity: 0.7,
                     }}
                   >
-                    = FA / ÉV
+                    = TREES / YR
                   </span>
                 </div>
                 <div
@@ -750,7 +750,7 @@ export default function Social() {
                     marginTop: 3,
                   }}
                 >
-                  elnyelt CO₂
+                  CO₂ absorbed
                 </div>
               </div>
             </div>
@@ -771,7 +771,7 @@ export default function Social() {
                   opacity: 0.75,
                 }}
               >
-                Minden tekerés számít. ↴
+                Every ride counts. ↴
               </span>
             </div>
           </div>
